@@ -11,10 +11,10 @@ class Game {
 }
 const games = [
     new Game('Shatter', 'PC', 'Sidhe Interactive', 'Action', 10),
-    new Game( 'Clutch', 'PC', 'Targem Games', 'Racing', 10 ),
-    new Game('Asteria', 'PC', 'Legend Studio', 'Action', 10 ),
-    new Game( 'Zombi', 'Playstation 4', 'Ubisoft Montpellier', 'First Person Shooter', 20 ),
-    new Game( 'Doom', 'Playstation 4', 'id Software', 'First Person Shooter', 20 )
+    new Game('Clutch', 'PC', 'Targem Games', 'Racing', 10),
+    new Game('Asteria', 'PC', 'Legend Studio', 'Action', 10),
+    new Game('Zombi', 'Playstation 4', 'Ubisoft Montpellier', 'First Person Shooter', 20),
+    new Game('Doom', 'Playstation 4', 'id Software', 'First Person Shooter', 20)
 ];
 
 MongoClient.connect(
@@ -28,7 +28,6 @@ MongoClient.connect(
                 console.log(res.ops);
                 client.close();
 
-            })
-        })
-    }
-);
+            });
+        });
+    });
