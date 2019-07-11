@@ -23,7 +23,7 @@ const games = [
     const coll = await db.collection('games');
     //const res = await coll.insertMany(games);
     //console.log(res);
-    const updOne = await coll.updateOne({name: 'Shatter'}, {$set: {price: 5}});
+    const updOne = await coll.updateOne({_name: 'Shatter'}, {$set: {_price: 5}});
     console.log(updOne.result);
     client.close();    
 }());
