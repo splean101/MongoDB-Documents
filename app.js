@@ -21,12 +21,32 @@ const games = [
     const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true });
     const db = client.db('gamesdb');
     const coll = await db.collection('games');
-    //const res = await coll.insertMany(games);
+    //const res = await coll.insertMany(games); //adding all documents
     //console.log(res);
-    const updOne = await coll.updateOne({_name: 'Shatter'}, {$set: {_price: 5}});
-    console.log(updOne.result);
+    //const updShatter = await coll.updateOne({_name: 'Shatter'}, {$set: {_price: 15}}); //updating price
+    //const updAsteria = await coll.updateOne({_name: 'Asteria'}, {$set: {_price: 5}}); //updating price
+    //const updDoom = await coll.updateOne({_name: 'Doom'}, {$set: {_price: 40}}); //updating price
+    //const consoleAll = await coll.find().toArray(); //consoling all documents
+    //console.log(consoleAll);
+    //const getAsteria = await coll.findOne({_name: 'Asteria'}); //getting by name
+    //console.log(getAsteria);
+    /*const getAllName = await coll.find().forEach(res => {  //getting all names
+        if(res._name) console.log(res._name);
+    });*/
+    //const sortByGenre = await coll.find().sort({_genre: 1}).toArray();  //getting sorted by genre
+    //console.log(sortByGenre);
+    const delByPlatform = await coll.deleteMany({_platform: 'Playstation 4'});
+    console.log(delByPlatform.result);
     client.close();    
 }());
+
+
+
+
+
+
+
+
 /*MongoClient.connect(
     'mongodb://localhost:27017',
     { useNewUrlParser: true },
